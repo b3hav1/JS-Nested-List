@@ -36,37 +36,3 @@ groups.forEach(group =>
 });
 
 root.addEventListener('dragover', event => Events.dragOver(root, 'group', event));
-
-
-
-
-const puppeteer = require('puppeteer');
-
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
-  // Замените 'USER_ID' на ID пользователя, чьи подписки вы хотите получить
-  const userId = 'USER_ID';
-  const url = `https://www.youtube.com/channel/${userId}/subscriptions`;
-
-  await page.goto(url);
-  await page.waitForSelector('ytd-grid-renderer');
-
-  // Получаем список подписок
-  const subscriptions = await page.evaluate(() => {
-    const subscriptionElements = document.querySelectorAll('ytd-grid-renderer ytd-grid-video-renderer');
-    const subscriptions = [];
-    subscriptionElements.forEach(element => {
-      const titleElement = element.querySelector('#video-title');
-      const title = titleElement ? titleElement.innerText : '';
-      const url = titleElement ? titleElement.href : '';
-      subscriptions.push({ title, url });
-    });
-    return subscriptions;
-  });
-
-  console.log(subscriptions);
-
-  await browser.close();
-})();
