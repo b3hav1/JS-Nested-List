@@ -1,0 +1,67 @@
+body
+{
+    font: var(--font);
+
+    background: #222;
+    color: white;
+}
+
+details summary
+{
+    border: solid 2px #444;
+
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+details summary::marker
+{
+    color: orange;
+}
+
+hr
+{
+    border: solid 1px orange;
+}
+
+input
+{
+    background: #333;
+    color: white;
+
+    padding: 0.25em;
+    margin: 0.25em;
+}
+
+button
+{
+    background: #444;
+    color: orange;
+
+    height: 1.7em;
+}
+
+:root
+{
+    --font: normal 1em Bahnschrift;
+}
+
+.clear
+{
+    font: var(--font);
+    border: none;
+    outline: none;
+}
+
+.stack
+{
+    margin-bottom: 0.5em;
+    min-height: 1em;
+}
+
+.item
+{
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.5em;
+    background: #333;
+}

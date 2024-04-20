@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = 'en' dir = 'ltr'>
+    <head>
+        <title>Sortable List</title>
+        <!-- Metadata -->
+        <meta charset = 'utf-8'>
+        <meta name = 'author' content = 'b3hav1'>
+        <!-- Import Styles -->
+        <link rel = 'stylesheet' href = 'styles/style.css'>
+        <!-- Import Scripts -->
+        <script type = 'module' src = 'scripts/main.js'></script>
+        <script type = 'module' src = 'scripts/header.js'></script>
+    </head>
+    <body>
+
+        <div>
+            <input id = 'itemName'  class = 'clear' placeholder = 'Item Name'>
+            <button id = 'addItem' class = 'clear'>Add</button>
+        </div>
+        <div>
+            <input id = 'groupName' class = 'clear' placeholder = 'Group Name'>
+            <button id = 'addGroup' class = 'clear'>Add</button>
+        </div>
+
+        <hr>
+
+        <div id = 'root'>
+            <details open class = 'group'>
+                <summary draggable = 'true'>Group 1</summary>
+                <div class = 'stack'>
+                    <p draggable = 'true' class = 'item'>Item 1</p>
+                    <p draggable = 'true' class = 'item'>Item 2</p>
+                    <p draggable = 'true' class = 'item'>Item 3</p>
+                </div>
+            </details>
+            <details open class = 'group'>
+                <summary draggable = 'true'>Group 1</summary>
+                <div class = 'stack'>
+                    <p draggable = 'true' class = 'item'>Item 1</p>
+                    <p draggable = 'true' class = 'item'>Item 2</p>
+                    <p draggable = 'true' class = 'item'>Item 3</p>
+                </div>
+            </details>
+        </div>
+    </body>
+</html>
